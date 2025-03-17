@@ -1,6 +1,3 @@
-using Admin as service from '../../srv/admin-service';
-
-
 annotate service.GalacticSpaceFarers with {
     stardustCollection @title: 'Stardust Collection';
     spacesuitColor     @title: 'Spacesuit Color';

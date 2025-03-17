@@ -19,10 +19,10 @@ entity IntergalacticPositions : cuid {
 // Galactic Spacefarer Entity
 entity GalacticSpacefarers : cuid, managed {
   name                    : String;
-  originPlanet            : String; // Origin planet
   stardustCollection      : Integer;
-  wormholeNavigationSkill : Integer; // Skill level (e.g., 1-10)
-  spacesuitColor          : String; // Spacesuit color
+  wormholeNavigationSkill : Integer;
+  originPlanet            : String;
+  spacesuitColor          : String;
   department              : Association to IntergalacticDepartments;
   position                : Association to IntergalacticPositions;
   email                   : String;

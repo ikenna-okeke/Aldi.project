@@ -29,6 +29,11 @@ read up here https://www.twilio.com/en-us/blog/send-and-receive-email-with-sap-c
 - To add test data run cds add data and then a csv file with the the test data structure will be added form your schema cds definition
 - I am using twilo agent to send an email so for this do - npm add @sendgrid/mail
 
+# TESTING CAP BACKEND APPLICATION
+
+- since this is a typescript application, to test application locally, run on the terminal : npm run start:local, as con tained in the package.json file
+- now head over to the test folder or a rest client (PostMan) and conduct test on local host 3001
+
 # WORKING LOCALLY
 
 - while working locally, the database type is sqlite and the authentication switched to dummy to require no authentication
@@ -75,10 +80,12 @@ read up here https://www.twilio.com/en-us/blog/send-and-receive-email-with-sap-c
 
 # EXTRAS
 
-- also during build, the fiori app built is deployed to approuter-fiori folder, while the
+- also during build, the fiori app built is deployed to approuter-fiori folder
 - additionally, a deployment multi target archive file have been added in the build folder for the deployment of the application
-- then create a hana database in the cloud foundry space where the deployment will take place.
+- create a hana database in the cloud foundry space where the deployment will take place.
 - after login in to a cloud foundry space, a quick deployment can be done using npm run deploy:cf
+- after deployment, the Admin service and the fiori application can then be connected using the bound destination service instance
+- the deployed Admin service protected with the xsuaa is then added as a destination called "space-fahrer-admin" (as described in the xs-app.json file in the folder approuter-fiori) in the service bindings of the deployed fiori app
 
 # OBSERVATION
 
@@ -158,5 +165,5 @@ ENDCLASS.
 
 # HANA CLOUD
 
+- Before deploying or building the hana hdi tables, remove the data/csv folder and rather import the csv files into the hana cloud tables after creation
 - first of all create an HANA cloud application and then assign a hana cloud admin role to user and then create a hana cloud db in the same cf environment
--
