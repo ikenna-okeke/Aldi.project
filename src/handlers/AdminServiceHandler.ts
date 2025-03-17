@@ -38,14 +38,14 @@ export class AdminHandler {
       .catch((error: any) => console.error(error));
   }
 
-  //Restrict access to only the user's planet
-  // @OnRead()
-  // public async onRead(@Entities() galaxy: GalacticSpaceFarers, @Req() req: Request) {
-  //   const user = req.user; //obtained from the JWT Token
-  //   const fahresPlannet = user.attr?.originPlanet;
-  //   if (!fahresPlannet) {
-  //     req.reject(403, "Access denied. User planet not specified.");
-  //   }
-  //   return SELECT.from(galaxy).where({ originPlanet: fahresPlannet });
-  // }
+  // Restrict access to only the user's planet
+  @OnRead()
+  public async onRead(@Entities() galaxy: GalacticSpaceFarers, @Req() req: Request) {
+    const user = req.user; //obtained from the JWT Token
+    const fahresPlannet = user.attr?.originPlanet;
+    if (!fahresPlannet) {
+      req.reject(403, "Access denied. User planet not specified.");
+    }
+    return SELECT.from(galaxy).where({ originPlanet: fahresPlannet });
+  }
 }
