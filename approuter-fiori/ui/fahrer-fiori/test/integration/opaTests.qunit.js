@@ -1,0 +1,2 @@
+sap.ui.require(["sap/fe/test/JourneyRunner","com/ikenna/aldi/ikenna/project/test/integration/FirstJourney","com/ikenna/aldi/ikenna/project/test/integration/pages/GalacticSpaceFarersList","com/ikenna/aldi/ikenna/project/test/integration/pages/GalacticSpaceFarersObjectPage"],function(e,a,n,i){"use strict";var e=new e({launchUrl:sap.ui.require.toUrl("com/ikenna/aldi/ikenna/project")+"/index.html"});e.run({pages:{onTheGalacticSpaceFarersList:n,onTheGalacticSpaceFarersObjectPage:i}},a.run)});
+//# sourceMappingURL=opaTests.qunit.js.map

@@ -1,0 +1,4 @@
+ID,name,stardustCollection,wormholeNavigationSkill,originPlanet,spacesuitColor,department_ID,position_ID,email,createdAt,createdBy,modifiedAt,modifiedBy
+253ff49d-bc81-4d50-ad72-8b5631fdd69c,John Doe,100,10,Earth,Blue,3548404a-3d2d-4c82-9fd4-986d9da06361,04aec0fc-fa7a-479a-a590-610946a9ff49,john.doe@gmail.com
+b1b3b3b3-7f26-44b2-861e-bb19da7abaa5,Doe didier,200,20,Earth,Red,423ce02f-55c8-42b6-8bbb-5c9d1595bc58,386ad402-b011-4ec2-87d3-04221c765a7f,doe.didier@gmail.com
+b1b3b3b3-7f26-44b2-861e-bb19da7abaa6,Foo ikenna,100,10,Earth,Blue,47004da1-c8b6-4d3b-a8b1-32f673fc36ef,04aec0fc-fa7a-479a-a590-610946a9ff49,foo.ikenna@gmail.com

@@ -1,0 +1,2 @@
+sap.ui.define(["sap/fe/test/ListReport"],function(a){"use strict";var e={actions:{},assertions:{}};return new a({appId:"com.ikenna.aldi.ikenna.project",componentId:"GalacticSpaceFarersList",contextPath:"/GalacticSpaceFarers"},e)});
+//# sourceMappingURL=GalacticSpaceFarersList.js.map

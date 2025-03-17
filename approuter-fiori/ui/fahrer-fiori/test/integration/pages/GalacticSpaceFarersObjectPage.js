@@ -1,0 +1,2 @@
+sap.ui.define(["sap/fe/test/ObjectPage"],function(e){"use strict";var a={actions:{},assertions:{}};return new e({appId:"com.ikenna.aldi.ikenna.project",componentId:"GalacticSpaceFarersObjectPage",contextPath:"/GalacticSpaceFarers"},a)});
+//# sourceMappingURL=GalacticSpaceFarersObjectPage.js.map

@@ -1,0 +1,2 @@
+sap.ui.define(["sap/ui/model/Sorter"],function(e){"use strict";function t(t){const a="com.ikenna.aldi.ikenna.project::GalacticSpaceFarersList--fe::table::GalacticSpaceFarers::LineItem::Table";const n="com.ikenna.aldi.ikenna.project::GalacticSpaceFarersList--fe::table::GalacticSpaceFarers::LineItem-innerTable-listUl";const i=new e("name",true);let c=[];c.push(i);const r=this.byId(a);const s=r.getBinding("items");s?.sort(c)}var a={__esModule:true};a.onSort=t;return a});
+//# sourceMappingURL=ActionsFile.js.map

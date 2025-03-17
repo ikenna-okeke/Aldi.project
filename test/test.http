@@ -1,0 +1,71 @@
+@host = http://localhost:4006
+
+
+###
+GET http://localhost:4004/odata/v4/admin
+
+###
+GET http://localhost:4008/odata/v4/admin
+
+
+
+###
+POST http://localhost:4004/odata/v4/admin
+Content-Type: application/json
+
+{
+
+}
+
+
+
+###
+
+
+//GET SECTIONCONTENT AGGREGATION
+###
+GET http://localhost:3001/odata/v4/admin/$metadata
+
+//GET SECTIONCONTENT AGGREGATION
+###
+GET http://localhost:3001/odata/v4/admin/Portals('026829a4-dc71-4cbd-ad34-6f46b0df5739')/pages
+
+
+////ACTION
+###
+POST http://localhost:4003/odata/v4/admin/Portals('026829a4-dc71-4cbd-ad34-6f46b0df5739')/pages('6d9eeacc-d39b-4b43-a250-c0f6cf3505ff')/copy
+
+
+
+
+
+###
+GET http://localhost:4003/odata/v4/admin/$metadata
+
+//FUNCTION
+###
+GET http://localhost:3001/odata/v4/admin/countAllPages()
+
+//UNBOUND FUNCTION WORKS
+###
+GET http://localhost:3001/odata/v4/admin/countAllPages()
+
+
+//UNBOUND ACTION WORKS
+###
+GET http://localhost:3001/odata/v4/admin/Pages
+
+
+
+//BOUND ACTION DOES NOT WOWRK
+###
+GET http://localhost:4003/odata/v4/admin/Portals('026829a4-dc71-4cbd-ad34-6f46b0df5739')/pages('6d9eeacc-d39b-4b43-a250-c0f6cf3505ff')/helloWorld()
+
+//BOUND FUNCTION NO
+###
+GET http://localhost:3001/odata/v4/admin/Portals('026829a4-dc71-4cbd-ad34-6f46b0df5739')/pages('6d9eeacc-d39b-4b43-a250-c0f6cf3505ff')/helloWorld()
+
+
+//ACTION
+###
+POST http://localhost:3001/odata/v4/admin/Portals('026829a4-dc71-4cbd-ad34-6f46b0df5739')/pages('6d9eeacc-d39b-4b43-a250-c0f6cf3505ff')/copy

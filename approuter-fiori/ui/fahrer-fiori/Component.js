@@ -1,0 +1,2 @@
+sap.ui.define(["sap/fe/core/AppComponent"],function(n){"use strict";const e=n.extend("com.ikenna.aldi.ikenna.project.Component",{metadata:{manifest:"json"}});return e});
+//# sourceMappingURL=Component.js.map

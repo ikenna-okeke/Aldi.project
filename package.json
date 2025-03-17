@@ -1,0 +1,85 @@
+{
+  "name": "CAP_TYPESCRIPT",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "^6.8.2",
+    "@sap/cds-dk": "^8.7.0",
+    "@sap/eslint-plugin-ui5-jsdocs": "^2.0.5",
+    "@sap/xssec": "^4",
+    "@sapui5/ts-types": "^1.92.2",
+    "@sendgrid/mail": "^8.1.4",
+    "ajv": "^8.17.1",
+    "cds-routing-handlers": "^3.0.7",
+    "dotenv": "^16.4.7",
+    "eslint": "^7.32.0",
+    "express": "^4",
+    "nodemon": "^3.1.9",
+    "typedi": "^0.10.0"
+  },
+  "devDependencies": {
+    "@cap-js/cds-typer": "^0.32.1",
+    "@cap-js/cds-types": "^0.9.0",
+    "@cap-js/sqlite": "^1",
+    "@sap/cds": "^8.8.2",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.13.10",
+    "cds-plugin-ui5": "^0.9.3",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch": "tsc -w & cds watch",
+    "deploy:db": "cds deploy --to sqlite",
+    "deploy:hana": "cds deploy --to hana",
+    "build:cds": "echo 'Compiling cds sources...' && cds build",
+    "build:ts": "echo 'Compiling tsx sources...' && tsc",
+    "build": "npm run build:cds && npm run build:ts",
+    "build:srv": "rimraf gen && npm run build",
+    "build:app": "rimraf approuter-fiori/ui && npm run build -w ikenna.project",
+    "build:srv-app": "npm run build:srv && npm run build:app",
+    "build:mta:admin": "mbt build -s build/admin",
+    "deploy:cf": "npm run build:srv-app && npm run build:mta:admin && cf deploy build/admin/mta_archives/galaxy-space-fahrer_0.0.1.mtar"
+  },
+  "imports": {
+    "#cds-models/*": "./@cds-models/*/index.js"
+  },
+  "cds": {
+    "server": {
+      "port": 4006
+    },
+    "requires": {
+      "db": {
+        "kind": "sqlite",
+        "model": [
+          "db",
+          "srv"
+        ]
+      },
+      "[production]": {
+        "auth": "xsuaa"
+      }
+    },
+    "typer": {
+      "useEntitiesProxy": true
+    }
+  },
+  "sapux": [
+    "app/project1",
+    "app/lldi_project",
+    "app/aldi.project",
+    "app/aldi_project",
+    "app/ikenna_aldi",
+    "app/ikenna.aldi.project",
+    "app/ikenna.aldi",
+    "app/aldi.project",
+    "app/ikenna.project"
+  ],
+  "workspaces": [
+    "app/*"
+  ]
+}

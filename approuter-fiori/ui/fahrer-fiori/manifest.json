@@ -1,0 +1,177 @@
+{
+  "_version": "1.65.0",
+  "sap.app": {
+    "id": "com.ikenna.aldi.ikenna.project",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:lrop",
+      "version": "1.16.5",
+      "toolsId": "d856f3c1-07ec-406f-8fb9-a623626a7db1"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/odata/v4/admin/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "odataVersion": "4.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.127.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.fe.templates": {},
+        "sap.f": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.ikenna.aldi.ikenna.project.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+        }
+      },
+      "@i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "uri": "i18n/i18n.properties"
+      }
+    },
+    "resources": {
+      "css": []
+    },
+    "routing": {
+      "config": {
+        "flexibleColumnLayout": {
+          "defaultTwoColumnLayoutType": "TwoColumnsMidExpanded",
+          "defaultThreeColumnLayoutType": "ThreeColumnsMidExpanded"
+        },
+        "routerClass": "sap.f.routing.Router"
+      },
+      "routes": [
+        {
+          "pattern": ":?query:",
+          "name": "GalacticSpaceFarersList",
+          "target": [
+            "GalacticSpaceFarersList"
+          ]
+        },
+        {
+          "pattern": "GalacticSpaceFarers({key}):?query:",
+          "name": "GalacticSpaceFarersObjectPage",
+          "target": [
+            "GalacticSpaceFarersList",
+            "GalacticSpaceFarersObjectPage"
+          ]
+        }
+      ],
+      "targets": {
+        "GalacticSpaceFarersList": {
+          "type": "Component",
+          "id": "GalacticSpaceFarersList",
+          "name": "sap.fe.templates.ListReport",
+          "options": {
+            "settings": {
+              "contextPath": "/GalacticSpaceFarers",
+              "variantManagement": "Page",
+              "navigation": {
+                "GalacticSpaceFarers": {
+                  "detail": {
+                    "route": "GalacticSpaceFarersObjectPage"
+                  }
+                }
+              },
+              "controlConfiguration": {
+                "@com.sap.vocabularies.UI.v1.LineItem": {
+                  "tableSettings": {
+                    "type": "ResponsiveTable",
+                    "personalization": {
+                      "filter": true,
+                      "sort": true
+                    }
+                  },
+                  "actions": {
+                    "tableSorting123": {
+                      "press": "com.ikenna.aldi.ikenna.project.ext.controller.ActionsFile.onSort",
+                      "visible": true,
+                      "enabled": true,
+                      "requiresSelection": false,
+                      "text": "sort"
+                    }
+                  }
+                }
+              },
+              "hideFilterBar": false
+            }
+          },
+          "controlAggregation": "beginColumnPages",
+          "contextPattern": ""
+        },
+        "GalacticSpaceFarersObjectPage": {
+          "type": "Component",
+          "id": "GalacticSpaceFarersObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "editableHeaderContent": false,
+              "contextPath": "/GalacticSpaceFarers"
+            }
+          },
+          "controlAggregation": "midColumnPages",
+          "contextPattern": "/GalacticSpaceFarers({key})"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "sap.fe.templates.RootContainer.view.Fcl",
+      "type": "XML",
+      "async": true,
+      "id": "appRootView"
+    }
+  },
+  "sap.fiori": {
+    "registrationIds": [],
+    "archeType": "transactional"
+  }
+}

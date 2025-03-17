@@ -1,0 +1,31 @@
+{
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.spaceUser",
+      "description": "spaceUser"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "level",
+      "description": "level",
+      "valueType": "s",
+      "valueRequired": false
+    }
+  ],
+  "role-templates": [
+    {
+      "name": "spaceUser",
+      "description": "generated",
+      "scope-references": ["$XSAPPNAME.spaceUser"],
+      "attribute-references": []
+    },
+    {
+      "name": "userattributes",
+      "description": "generated",
+      "default-role-name": "Attributes of a User",
+      "scope-references": [],
+      "attribute-references": ["level"]
+    }
+  ]
+}
