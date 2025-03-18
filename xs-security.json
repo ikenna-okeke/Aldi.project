@@ -1,4 +1,7 @@
 {
+  "xsappname": "galaxy-space-fahrer",
+  "tenant-mode": "dedicated",
+  "description": "Security profile of called application",
   "scopes": [
     {
       "name": "$XSAPPNAME.spaceUser",

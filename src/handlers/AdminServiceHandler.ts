@@ -4,6 +4,7 @@ import { GalacticSpaceFarers, GalacticSpaceFarer } from "../../@cds-models/Admin
 import sgMail from "@sendgrid/mail";
 import { IMessage } from "../utils";
 
+//PLEASE run on the terminal : npm run start:local to test the appllication locally
 @Handler(GalacticSpaceFarers.name)
 export class AdminHandler {
   @BeforeCreate()
@@ -44,7 +45,7 @@ export class AdminHandler {
     const user = req.user; //obtained from the JWT Token
     const fahresPlannet = user.attr?.originPlanet;
     if (!fahresPlannet) {
-      req.reject(403, "Access denied. User planet not specified.");
+      req.reject(403, "Access denied, User planet not specified.");
     }
     return SELECT.from(galaxy).where({ originPlanet: fahresPlannet });
   }

@@ -1,27 +1,3 @@
-# Getting Started
-
-Welcome to your new project.
-
-It contains these folders and files, following our recommended project layout:
-
-| File or Folder | Purpose                              |
-| -------------- | ------------------------------------ |
-| `app/`         | content for UI frontends goes here   |
-| `db/`          | your domain models and data go here  |
-| `srv/`         | your service models and code go here |
-| `package.json` | project metadata and configuration   |
-| `readme.md`    | this getting started guide           |
-
-## Next Steps
-
-- Open a new terminal and run `cds watch`
-- (in VS Code simply choose _**Terminal** > Run Task > cds watch_)
-- Start adding content, for example, a [db/schema.cds](db/schema.cds).
-
-## Learn More
-
-Learn more at https://cap.cloud.sap/docs/get-started/.
-
 # TWILO AGENT
 
 read up here https://www.twilio.com/en-us/blog/send-and-receive-email-with-sap-cap
@@ -89,10 +65,13 @@ read up here https://www.twilio.com/en-us/blog/send-and-receive-email-with-sap-c
 
 # OBSERVATION
 
+- I have worked with fiori a few times so that might not be my strongest forte even though i understand how it works, s I have been working mainly with freestyle ui5 applications and Coupling it with CAP
 - It is worthy to note that instead of using fiori, this exact same architecture can be rebuilt easily using a free style ui5 application and a flexible column layout control(fcl) with the control aggregations configured accordingly in the manifest.json
 - The data completely bound to odata v4 views, sorting and filtering being taken care of easily and pagination been taken care of by the growing and growingThreshold of the Table control and when this is not enough, custom implementation of pagination would also be possible.
 
 # MY ABAP CODE
+
+- This is the code from my local ABAP setup
 
 ```
 CLASS zcl_001_hello_world DEFINITION
