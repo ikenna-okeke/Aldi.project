@@ -73,14 +73,6 @@
     }
   },
   "sapux": [
-    "app/project1",
-    "app/lldi_project",
-    "app/aldi.project",
-    "app/aldi_project",
-    "app/ikenna_aldi",
-    "app/ikenna.aldi.project",
-    "app/ikenna.aldi",
-    "app/aldi.project",
     "app/ikenna.project"
   ],
   "workspaces": [
