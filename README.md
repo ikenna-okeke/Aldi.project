@@ -56,6 +56,7 @@ read up here https://www.twilio.com/en-us/blog/send-and-receive-email-with-sap-c
 
 # EXTRAS
 
+- Please do well to check out the build, approuter-fiori folders as i have some added configurations for the deployments there
 - also during build, the fiori app built is deployed to approuter-fiori folder
 - additionally, a deployment multi target archive file have been added in the build folder for the deployment of the application
 - create a hana database in the cloud foundry space where the deployment will take place.
@@ -65,7 +66,7 @@ read up here https://www.twilio.com/en-us/blog/send-and-receive-email-with-sap-c
 
 # OBSERVATION
 
-- I have worked with fiori a few times so that might not be my strongest forte even though i understand how it works, s I have been working mainly with freestyle ui5 applications and Coupling it with CAP
+- I have worked with fiori a few times so that might not be my strongest forte even though i understand how it works, as I have been working mainly with freestyle ui5 applications and Coupling it with CAP
 - It is worthy to note that instead of using fiori, this exact same architecture can be rebuilt easily using a free style ui5 application and a flexible column layout control(fcl) with the control aggregations configured accordingly in the manifest.json
 - The data completely bound to odata v4 views, sorting and filtering being taken care of easily and pagination been taken care of by the growing and growingThreshold of the Table control and when this is not enough, custom implementation of pagination would also be possible.
 
